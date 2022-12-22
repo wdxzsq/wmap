@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MapActivity"
+    tools:deviceIds="wear">
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_boxedEdges="all">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:backgroundTint="#FFFFFF"
+            android:clickable="true"
+            app:cardCornerRadius="100dp"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_border_bg"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                android:contentDescription="TODO" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/place"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|start"
+            android:foreground="@drawable/ic_map_border_item"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/imagePlace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+</androidx.wear.widget.BoxInsetLayout>
